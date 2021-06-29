@@ -1,6 +1,5 @@
 package xmlcarcatalogparser;
 
-import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
@@ -13,7 +12,7 @@ public class XmlCarCatalogParser {
         (new XmlCarCatalogParser()).run(args);
     }
 
-    private String extractFileName(String[] args) throws IOException {
+    private String extractFileName(String[] args) {
         if (args == null || args.length < 1) {
             throw new IllegalArgumentException(
                     "Command line Argument not found. I wait 1 argument as file name template:{appName youFileName}");

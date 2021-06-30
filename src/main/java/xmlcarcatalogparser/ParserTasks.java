@@ -12,13 +12,13 @@ public class ParserTasks {
     public int countUniqueProperty(String fileName, String tagName, String attributeName) throws ParseTaskException {
         Set<String> attributesNames = new HashSet<>();
 
-        Consumer<String> ifFountCallback = (attributeValue) -> {
+        Consumer<String> ifFoundCallback = (attributeValue) -> {
             attributeValue = attributeValue.replace("[ ]*", " ");
             attributeValue = attributeValue.trim();
             attributesNames.add(attributeValue);
         };
 
-        this.parse(fileName, new TagAttributePropertyInterceptor(tagName, attributeName, ifFountCallback));
+        this.parse(fileName, new TagAttributePropertyInterceptor(tagName, attributeName, ifFoundCallback));
 
         return attributesNames.size();
     }
